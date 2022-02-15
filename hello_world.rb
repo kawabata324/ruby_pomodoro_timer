@@ -1,10 +1,17 @@
-# # 数値や文字列を表示しよう
-# puts 1
-# puts "Hell
 
+age = 8
+result = case age
+     when 0..2
+        :baby
+    when 3..6
+        :littleChild
+    when 7..12
+        :child
+    when 13..18
+        :youth
+    else
+         :adult
+end
 
- remaining_minutes = 89 / 60
- 
- puts remaining_minutes
- 
- puts 34 /24
+puts result
+
