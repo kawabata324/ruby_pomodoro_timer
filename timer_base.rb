@@ -1,3 +1,7 @@
+require 'bundler'
+
+Bundler.require
+
 class TimerBase
     def initialize(minutes:)
         # Time.nowで現在時刻を呼び出せる,UTC???
@@ -21,6 +25,7 @@ class TimerBase
             # 分で表されたものは除外する必要がある分で表されたものを秒数に戻す
             remaining_seconds = format('%02d', diff_total_seconds - (remaining_minutes * 60) )
             print "\r#{remaining_minutes}:#{remaining_seconds}"
+            Timecop.travel(@end_time) unless ENV['DEBUG'].nil?
         end
     end
     
