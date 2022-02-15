@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './timer_base'
 require './pomodoro'
 require './short_break'
